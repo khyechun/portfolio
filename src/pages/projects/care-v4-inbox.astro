@@ -1,0 +1,222 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const features = [
+  {
+    title: "Live Chat",
+    description:
+      "Real-time messaging interface for human agents to communicate with patients seamlessly.",
+    gif: "/projects/care-v4-inbox/live_chat.gif",
+  },
+  {
+    title: "Comprehensive Filters",
+    description:
+      "Filter conversations by status, channel, assignee, and more to quickly find what you need.",
+    gif: "/projects/care-v4-inbox/filters.gif",
+  },
+  {
+    title: "Contact Details Sidebar and Drawer",
+    description:
+      "Easily View patient information, past conversations with AI generated summaries, activities, appointments, and comments on the right sidebar or the more detailed drawer.",
+    gif: "/projects/care-v4-inbox/patient_details.gif",
+  },
+  {
+    title: "Assignment of conversations",
+    description:
+      "Assign conversations to specific Human or AI agents for better workload distribution.",
+    gif: "/projects/care-v4-inbox/conversation_assignment.gif",
+  },
+  {
+    title: "Handover Alerts",
+    description:
+      "Get notified when the chatbot hands over a conversation that needs human attention.",
+    gif: "/projects/care-v4-inbox/alerts.gif",
+  },
+  {
+    title: "Attachments",
+    description: "View images, and documents within conversations.",
+    gif: "/projects/care-v4-inbox/images.gif",
+  },
+];
+---
+
+<Layout title="Care V4 Inbox Feature | Khye Chun">
+  <main class="project-page">
+    <a href="/#projects" class="back-link">← Back to projects</a>
+    <header class="header">
+      <h1>Care V4 Inbox Feature</h1>
+      <p class="description">
+        Care V4's Inbox feature gives human agents a live chat interface to
+        handle patient conversations from Facebook, WhatsApp, and other
+        channels. The chatbot handles messages first, but any problems are
+        handed over to human agents who can better manage the situation.
+      </p>
+    </header>
+    <div class="image-container">
+      <img src="/projects/care-v4-inbox/main.png" alt="Care V4 Inbox Feature" />
+    </div>
+
+    <section class="features">
+      <h2>Key Features</h2>
+
+      {
+        features.map((feature, index) => (
+          <div class:list={["feature", { reverse: index % 2 === 1 }]}>
+            <div class="feature-content">
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+            {feature.gif ? (
+              <div class="gif-container">
+                <img src={feature.gif} alt={feature.title} />
+              </div>
+            ) : (
+              <div class="gif-placeholder">
+                <span>GIF coming soon</span>
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .project-page {
+    width: 100%;
+    max-width: 900px;
+    padding: 6rem 2rem 4rem 2rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    font-family: "JetBrains Mono", "SF Mono", monospace;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--accent);
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.75rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .image-container {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    margin: 1rem 0;
+  }
+
+  .image-container img {
+    width: 100%;
+    display: block;
+  }
+
+  .features {
+    margin-top: 3rem;
+  }
+
+  .features h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 2rem;
+  }
+
+  .feature {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .feature:last-child {
+    margin-bottom: 0;
+  }
+
+  .feature.reverse {
+    flex-direction: row-reverse;
+  }
+
+  .feature-content {
+    flex: 1;
+  }
+
+  .feature-content h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem;
+  }
+
+  .feature-content p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .gif-placeholder {
+    flex: 2.5;
+    aspect-ratio: 16 / 9;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gif-placeholder span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: "JetBrains Mono", "SF Mono", monospace;
+  }
+
+  .gif-container {
+    flex: 2.5;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .gif-container img {
+    width: 100%;
+    display: block;
+  }
+
+  @media (max-width: 640px) {
+    .feature {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .feature.reverse {
+      flex-direction: column;
+    }
+  }
+</style>

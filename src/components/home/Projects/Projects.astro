@@ -1,0 +1,21 @@
+---
+import styles from "./Projects.module.css";
+---
+
+<section class={styles.projects} id="projects">
+  <h2>Projects Showcase</h2>
+  <div class={styles.grid}>
+    <a href="/projects/care-v4-inbox" class={styles.card}>
+      <div class={styles.imageWrapper}>
+        <img src="/projects/care-v4-inbox/main.png" alt="Care V4 Inbox Feature" />
+      </div>
+      <div class={styles.content}>
+        <h3>Care V4 Inbox Feature</h3>
+        <p class={styles.description}>
+          A live chat inbox enabling human agents to seamlessly take over chatbot conversations and manage patient queries in real-time.
+        </p>
+      </div>
+    </a>
+  </div>
+  <p class={styles.moreText}>More coming soon...</p>
+</section>

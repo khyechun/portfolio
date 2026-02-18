@@ -1,0 +1,333 @@
+---
+import { ExternalLink } from "@lucide/astro";
+import styles from "./Experiences.module.css";
+import {
+  siReact,
+  siTypescript,
+  siGraphql,
+  siCypress,
+  siReactquery,
+  siChakraui,
+  siHtml5,
+  siGit,
+  siRedux,
+  siCss,
+  siMui,
+  siJavascript,
+  siExpo,
+  siSvg,
+  siDotnet,
+  siBootstrap,
+} from "simple-icons";
+
+const BOTMD_TECH: { icon?: { svg: string; hex: string }; name: string }[] = [
+  { icon: siReact, name: "React" },
+  { icon: siTypescript, name: "TypeScript" },
+  { icon: siGraphql, name: "GraphQL" },
+  { icon: siCypress, name: "Cypress" },
+  { icon: siReactquery, name: "React Query" },
+  { icon: siChakraui, name: "Chakra UI" },
+  { icon: siHtml5, name: "HTML" },
+  { icon: siCss, name: "CSS" },
+  { icon: siGit, name: "Git" },
+  { name: "Jotai" },
+];
+
+const SWITCHEO_TECH: { icon?: { svg: string; hex: string }; name: string }[] = [
+  { icon: siReact, name: "React" },
+  { icon: siTypescript, name: "TypeScript" },
+  { icon: siRedux, name: "Redux & Redux Sagas" },
+  { icon: siMui, name: "Material UI" },
+  { name: "Ethers" },
+  { icon: siHtml5, name: "HTML" },
+  { icon: siCss, name: "CSS" },
+  { icon: siGit, name: "Git" },
+];
+
+const KRINU_TECH: { icon?: { svg: string; hex: string }; name: string }[] = [
+  { icon: siReact, name: "React Native" },
+  { icon: siJavascript, name: "JavaScript" },
+  { name: "NativeBase" },
+  { icon: siExpo, name: "Expo API" },
+  { name: "Victory Library" },
+  { icon: siSvg, name: "SVG" },
+];
+
+const ASTAR_TECH: { icon?: { svg: string; hex: string }; name: string }[] = [
+  { icon: siDotnet, name: ".NET MVC 5" },
+  { name: "MSSQL" },
+  { name: "C#" },
+  { icon: siJavascript, name: "JavaScript" },
+  { icon: siHtml5, name: "HTML" },
+  { icon: siBootstrap, name: "Bootstrap" },
+  { icon: siCss, name: "CSS" },
+];
+---
+
+<section class={styles.experiences} id="experiences">
+  <h2>Experiences</h2>
+  <div class={styles.timeline}>
+    <div class={styles.timelineItem}>
+      <div class={styles.timelineDate}>Feb 2024 - Present</div>
+      <div class={styles.timelineContent}>
+        <h3>
+          Bot MD (YC S18)
+          <a
+            href="https://www.botmd.io/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit Bot MD website"
+          >
+            <ExternalLink size={14} />
+          </a>
+        </h3>
+        <p class={styles.role}>Frontend Engineer · Singapore</p>
+        <div class={styles.techStack}>
+          {
+            BOTMD_TECH.map((tech) => (
+              <span class={styles.techTag}>
+                {tech.icon && (
+                  <span
+                    style={`color: #${tech.icon.hex}`}
+                    set:html={tech.icon.svg}
+                  />
+                )}
+                {tech.name}
+              </span>
+            ))
+          }
+        </div>
+        <p class={styles.description}>
+          At Bot MD, I contributed to multiple products as a frontend engineer.
+          I am currently the lead frontend engineer for Bot MD's latest product,
+          Care v4, where I built key features such as the inbox, enabling human
+          agents to seamlessly take over chatbot conversations and manage
+          patient queries through a live chat interface. Previously, I
+          collaborated with other frontend engineers on Care v3, focusing on
+          product quality, bug fixing, edge case handling, and performance
+          optimization to ensure a smooth user experience.
+        </p>
+        <div class={styles.collapsible}>
+          <button class={styles.toggleBtn} data-toggle-highlights
+            >Find out more</button
+          >
+          <div class={styles.highlightsWrapper} data-highlights>
+            <ul class={styles.highlights}>
+              <li>
+                Built the majority of the frontend for Care Platform v4, that
+                includes live agent chat functionality, customizable AI agents,
+                and integrations with messaging channels and calendar providers.
+              </li>
+              <li>
+                Developed and improved several features on Care v3 (Patient
+                Engagement Platform) including the analytics feature, patients
+                module and that was used by over 30 clinics and hospitals.
+              </li>
+              <li>
+                Maintained and created reusable components and Bot MD's UI
+                library used across multiple products.
+              </li>
+              <li>
+                Established end-to-end (E2E) testing for Care v3 using Cypress,
+                implementing the <a
+                  href="https://cucumber.io/"
+                  target="_blank"
+                  rel="noopener">Cucumber</a
+                > preprocessor to enable non-technical stakeholders to easily understand
+                test scenarios and write their own test cases.
+              </li>
+              <li>
+                Performed routine on-call duties, resolving incidents by fixing
+                bugs or escalating issues to the appropriate teams or
+                individuals.
+              </li>
+              <li>
+                Collaborated closely with the product manager, designer, and
+                engineers to ensure features were developed according to product
+                expectations.
+              </li>
+              <li>
+                Worked closely with the Operations team to develop scripts to
+                reduce the time it takes to set up new workspaces for different
+                clinics.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class={styles.timelineItem}>
+      <div class={styles.timelineDate}>Aug 2023 - Dec 2023</div>
+      <div class={styles.timelineContent}>
+        <h3>
+          Switcheo Labs
+          <a
+            href="https://www.switcheo.com/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit Switcheo website"
+          >
+            <ExternalLink size={14} />
+          </a>
+        </h3>
+        <p class={styles.role}>Frontend Engineer Intern · Singapore</p>
+        <div class={styles.techStack}>
+          {
+            SWITCHEO_TECH.map((tech) => (
+              <span class={styles.techTag}>
+                {tech.icon && (
+                  <span
+                    style={`color: #${tech.icon.hex}`}
+                    set:html={tech.icon.svg}
+                  />
+                )}
+                {tech.name}
+              </span>
+            ))
+          }
+        </div>
+        <p class={styles.description}>
+          At Switcheo Labs, I joined as a frontend engineering intern with no
+          prior experience in DeFi and quickly developed a strong understanding
+          of blockchain fundamentals, token standards, and decentralized finance
+          use cases. I primarily worked on Demex, Switcheo's decentralized
+          exchange, where I reworked the transactions page to improve usability
+          and clarity, developed the Promotions feature to showcase different
+          promotions happening on the platform. I also built a new token
+          conversion form supporting ICS-20 ↔ ERC-20 transfers to enable
+          seamless cross-chain asset movement.
+        </p>
+      </div>
+    </div>
+    <div class={styles.timelineItem}>
+      <div class={styles.timelineDate}>Feb 2022 - Jul 2022</div>
+      <div class={styles.timelineContent}>
+        <h3>Krinu (defunct)</h3>
+        <p class={styles.role}>Frontend Engineer Intern · Singapore</p>
+        <div class={styles.techStack}>
+          {
+            KRINU_TECH.map((tech) => (
+              <span class={styles.techTag}>
+                {tech.icon && (
+                  <span
+                    style={`color: #${tech.icon.hex}`}
+                    set:html={tech.icon.svg}
+                  />
+                )}
+                {tech.name}
+              </span>
+            ))
+          }
+        </div>
+        <p class={styles.description}>
+          Krinu was where I truly learned the value of writing good code. I
+          worked very closely with the CTO, who mentored me on frontend
+          development and best practices. Before this, I mainly focused on
+          shipping features for the end product, but at Krinu I began to
+          understand the intricacies that go into building high-quality,
+          maintainable frontend features.
+        </p>
+        <div class={styles.collapsible}>
+          <button class={styles.toggleBtn} data-toggle-highlights
+            >Find out more</button
+          >
+          <div class={styles.highlightsWrapper} data-highlights>
+            <ul class={styles.highlights}>
+              <li>
+                Built a highly-performant emoji picker that handles thousands of
+                nodes using virtualized lists, hooks, and state management.
+                Designed UI prototypes in Figma and implemented them in the chat
+                application.
+              </li>
+              <li>
+                Developed a reusable custom media player for videos, audio, and
+                images in chat messages.
+              </li>
+              <li>
+                Created an analytics feature with interactive graphs for CRM
+                analysis using the <a
+                  href="https://nearform.com/open-source/victory/"
+                  target="_blank"
+                  rel="noopener">Victory library</a
+                >.
+              </li>
+              <li>
+                Developed a custom rich text editor for users to style their
+                text messages.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class={styles.timelineItem}>
+      <div class={styles.timelineDate}>Jul 2019 - Feb 2020</div>
+      <div class={styles.timelineContent}>
+        <h3>
+          A*STAR
+          <a
+            href="https://www.a-star.edu.sg/"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit A*STAR website"
+          >
+            <ExternalLink size={14} />
+          </a>
+        </h3>
+        <p class={styles.role}>Software Developer Intern · Singapore</p>
+        <div class={styles.techStack}>
+          {
+            ASTAR_TECH.map((tech) => (
+              <span class={styles.techTag}>
+                {tech.icon && (
+                  <span
+                    style={`color: #${tech.icon.hex}`}
+                    set:html={tech.icon.svg}
+                  />
+                )}
+                {tech.name}
+              </span>
+            ))
+          }
+        </div>
+        <p class={styles.description}>
+          A*STAR was my first internship experience. I worked under my principal investigator, who assigned me several projects to work on. One of the main projects I built was a survey application that allowed users to create surveys with different types of questions. It also included features such as auto-scoring and anti-cheat functionality.
+        </p>
+        <div class={styles.collapsible}>
+          <button class={styles.toggleBtn} data-toggle-highlights
+            >Find out more</button
+          >
+          <div class={styles.highlightsWrapper} data-highlights>
+            <ul class={styles.highlights}>
+              <li>
+                Also was able to write my <a
+                  href="https://www.researchgate.net/publication/346488705_Application_Notes_PsychVey_Ver2_-_Improving_online_survey_data_collection"
+                  target="_blank"
+                  rel="noopener">first paper</a
+                > to help my PI and a senior software developer.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll("[data-toggle-highlights]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const wrapper = btn.nextElementSibling as HTMLElement;
+      const isOpen =
+        wrapper.style.maxHeight && wrapper.style.maxHeight !== "0px";
+
+      if (isOpen) {
+        wrapper.style.maxHeight = "0px";
+        btn.textContent = "Find out more";
+      } else {
+        wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+        btn.textContent = "Show less";
+      }
+    });
+  });
+</script>

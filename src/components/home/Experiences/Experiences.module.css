@@ -1,0 +1,185 @@
+.experiences {
+  width: 100%;
+  max-width: 650px;
+  padding: 4rem 2rem;
+}
+
+.experiences h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 2rem;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.timelineItem::before {
+  content: "";
+  position: absolute;
+  left: -1.75rem;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  background: var(--bg-card);
+  border: 2px solid var(--text-muted);
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.timelineItem:first-child::before {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--glow);
+}
+
+.timelineDate {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-family: "JetBrains Mono", "SF Mono", monospace;
+  letter-spacing: 0.03em;
+}
+
+.timelineContent h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+}
+
+.timelineContent h3 a {
+  color: var(--text-muted);
+  display: flex;
+  transition: color 0.2s, filter 0.2s;
+}
+
+.timelineContent h3 a:hover {
+  color: var(--accent);
+  filter: drop-shadow(0 0 6px var(--glow));
+}
+
+.role {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.techTag {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-family: "JetBrains Mono", "SF Mono", monospace;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.techTag:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 8px var(--glow);
+}
+
+.techTag :global(svg) {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
+  display: block;
+}
+
+.description {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.highlights {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.highlights li {
+  margin-bottom: 0.5rem;
+}
+
+.highlights li::marker {
+  color: var(--accent);
+}
+
+.highlights li:last-child {
+  margin-bottom: 0;
+}
+
+.collapsible {
+  margin-top: 0.5rem;
+}
+
+.toggleBtn {
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-weight: 500;
+  font-family: "JetBrains Mono", "SF Mono", monospace;
+  padding: 0.35rem 0.75rem;
+  margin-bottom: 0.75rem;
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.toggleBtn:hover {
+  background: rgba(2, 132, 199, 0.1);
+  box-shadow: 0 0 12px var(--glow);
+}
+
+.highlightsWrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.details .highlights {
+  margin-top: 0;
+}
