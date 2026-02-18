@@ -5,7 +5,7 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   integrations: [],
   site: "https://khyechun.github.io",
-  base: "/master",
+  base: "/portfolio",
   devToolbar: {
     enabled: false,
   },
